@@ -1,0 +1,38 @@
+<footer class="footer">
+  <div class="footer__contact">
+    <div class="footer__contact-phrase">Feel free to contact me at any time.</div>
+    <a class="footer__contact-mail" href="mailto:contact@matthiasdevers.com">contact@matthiasdevers.com</a>
+  </div>
+  <div class="footer__meta">
+    <div class="footer__clock">
+      <span id="time">00:00:00</span>
+      <span>local time</span>
+    </div>
+    <div class="footer__location">Düsseldorf, Germany</div>
+  </div>
+  <div class="footer__sub-footer">
+    <div class="footer__phrase">Let's build something that just works.</div>
+    <div class="footer__secondary">
+      <span class="footer__copyright">© 2024 Matthias Devers</span>
+      <a class="footer__link" href="/legal-notice">Legal notice</a>
+    </div>
+  </div>
+</footer>
+
+<script defer>
+
+
+function getCurrentTime() {
+  const options = {
+    timeZone: "Europe/Berlin"
+  };
+  const today = new Date();
+  return document.getElementById("time").innerHTML = today.toLocaleTimeString("de-DE", options);
+}
+
+getCurrentTime();
+setInterval(getCurrentTime, 1000);
+
+
+
+</script>

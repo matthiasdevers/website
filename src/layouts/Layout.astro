@@ -1,0 +1,68 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+	description: string;
+	robots: string;
+}
+
+const { title, description, robots } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="generator" content={Astro.generator}>
+		<meta name="viewport" content="width=device-width">
+		<meta name="robots" content={robots}>
+		<meta name="description" content={description}>
+		<title>{title}</title>
+
+		<!-- Open Graph Protocol -->
+		<meta property="og:site_name" content="Matthias Devers">
+		<meta property="og:title" content={title}>
+		<meta property="og:description" content={description}>
+		<meta property="og:image" content="/default.png">
+		<meta property="og:type" content="website">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:url" content={canonicalURL}>
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content={title}>
+		<meta name="twitter:description" content={description}>
+		<meta name="twitter:image" content="/default.png">
+		<meta name="twitter:url" content={canonicalURL}>
+
+		<!-- Branding -->
+		<link rel="icon" href="/favicon.ico" sizes="32x32">
+		<link rel="icon" href="/icon.svg" type="image/svg+xml">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link rel="manifest" href="/manifest.json">
+
+		<!-- Styles & Scripts -->
+		<link rel="stylesheet" href="/style.css">
+		<ViewTransitions />
+
+	</head>
+
+	<body>
+		<div class="container">
+			<Header />
+			<main class="content">
+				<slot />
+			</main>
+			<Footer />
+		</div>
+		<div class="blob"></div>
+	</body>
+
+</html>

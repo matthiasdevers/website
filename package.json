@@ -1,0 +1,26 @@
+{
+  "name": "matthiasdevers",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "postcss": "postcss src/styles/style.css --dir public -w"
+  },
+  "dependencies": {
+    "astro": "^4.11.5",
+    "@astrojs/check": "^0.8.1",
+    "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^7.0.4",
+    "postcss": "^8.4.39",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "postcss-sorting": "^8.0.2"
+  }
+}

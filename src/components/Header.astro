@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import avatarImage from "../images/avatar.jpg";
+---
+
+<header class="header">
+  <div class="header__avatar">
+    <a class="header__avatar-overlay" href="/" aria-label="Go to the homepage"></a>
+    <Image src={avatarImage} alt="Matthias Devers avatar image." />
+  </div>
+  <a class="header__main" href="/">
+    <div class="header__name">matthias devers</div>
+    <div class="header__title">frontend developer & product designer</div>
+  </a>
+</header>
